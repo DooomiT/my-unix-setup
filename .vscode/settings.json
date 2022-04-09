@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://json.schemastore.org/github-workflow.json": "file:///Users/mrdevops/repos/projects/my-unix-setup/.workflows/github/test.yml"
-    }
-}

@@ -1,10 +1,9 @@
 #!/bin/bash
 source ./src/helper.sh
 
-if command -v brew &> /dev/null
-then
-    say_green "Homebrew is already installed."
-    exit 0
+if command -v brew &> /dev/null; then
+  say_green "Homebrew is already installed."
+  exit 0
 fi
 
 if [[ $OSTYPE == 'darwin'* ]]; then
@@ -20,23 +19,22 @@ fi
 
 if [[ $OSTYPE == 'darwin'* ]]; then
   say_yellow 'Post install Homebrew macOS'
-  echo 'PATH="/usr/local/bin:$PATH"' >> ~/.bashrc
+  echo "PATH='/usr/local/bin:$PATH'" >> "${HOME}"/.bashrc
 fi
 
 if [[ $OSTYPE == 'linux-gnu' ]]; then
   say_yellow 'Post install Homebrew Ubuntu'
-  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+  test -d "${HOME}"/.linuxbrew && eval "$("${HOME}"/.linuxbrew/bin/brew shellenv)"
   test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-  echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+  test -r "${HOME}"/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "${HOME}"/.bashrc
+  echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "${HOME}"/.bashrc
 fi
 
-source ~/.bashrc
-if command -v brew &> /dev/null
-then
-    say_green "Homebrew is now installed."
-    exit 0
-else 
-    say_red "Homebrew is not installed."
-    exit 1
+source "${HOME}"/.bashrc
+if command -v brew &> /dev/null; then
+  say_green "Homebrew is now installed."
+  exit 0
+else
+  say_red "Homebrew is not installed."
+  exit 1
 fi

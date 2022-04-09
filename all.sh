@@ -15,6 +15,7 @@ fi
 ./src/homebrew.sh
 ./src/zsh.sh
 ./src/fonts.sh 
-  
-
-
+./src/vscode.sh
+./src/go.sh
+./src/gopass.sh
+./src/nvm.sh
