@@ -6,7 +6,7 @@ if command -v gopass &> /dev/null; then
   exit 0
 fi
 
-go install github.com/gopasspw/gopass
+go install github.com/gopasspw/gopass@latest
 
 if command -v gopass &> /dev/null; then
   say_green "gopass is now installed."

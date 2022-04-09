@@ -1,8 +1,9 @@
 #!/bin/bash
 source ./src/helper.sh
 
-if command -v code &> /dev/null; then
-  say_green "Visual Studio Code is already installed."
+# if code or code-insiders is installed, skip
+if command -v code &> /dev/null || command -v code-insiders &> /dev/null; then
+  say_green "code or code-insiders is already installed."
   exit 0
 fi
 
