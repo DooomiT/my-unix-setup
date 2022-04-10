@@ -26,7 +26,7 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
   say_yellow 'Post install Homebrew Ubuntu'
   test -d "${HOME}"/.linuxbrew && eval "$("${HOME}"/.linuxbrew/bin/brew shellenv)"
   test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  test -r "${HOME}"/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "${HOME}"/.bashrc
+  test -r "${HOME}"/.bashrc && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "${HOME}"/.bashrc
   echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "${HOME}"/.bashrc
 fi
 
